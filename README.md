@@ -38,15 +38,27 @@ Commit your code regularly and use descriptive messages. This helps both you (in
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your Team Lead.
 
-- [ ] Mention two parts of Express that you learned about this week.
+ Mention two parts of Express that you learned about this week.
 
-- [ ] Describe Middleware?
+    - routing
+    - middleware
 
-- [ ] Describe a Resource?
+ Describe Middleware?
 
-- [ ] What can the API return to help clients know if a request was successful?
+    Middleware functions can get the request and response objects, operate on them, and (when specified) trigger some action. Examples are logging or security.
 
-- [ ] How can we partition our application into sub-applications?
+ Describe a Resource?
+
+    the data resources (typically formatted in JSON, or XML) that are represented by URIs (paths) accessed via HTTP.
+
+ What can the API return to help clients know if a request was successful?
+
+    Status codes like 200, 201, and 204 (no content - for successful requests without a response body.)
+
+ How can we partition our application into sub-applications?
+
+    you can use module.exports to export file connected to route and import with express into main file. 
+
 
 ## Minimum Viable Product
 
