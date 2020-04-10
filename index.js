@@ -12,3 +12,12 @@ I need this code, but don't know where, perhaps should make some middleware, don
 
 Go code!
 */
+
+
+const server = require('./server.js');
+
+const port = process.env.PORT|| 5000; // use dynamic port, or if undefined (using locally), just use 5000 as default. 
+
+server.listen(port, () => {
+  console.log(`\n* Server Running on http://localhost:${port} *\n`);
+});
