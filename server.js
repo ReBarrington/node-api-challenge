@@ -12,11 +12,8 @@ server.get('/', (req, res) => {
 
 server.use(express.json()); // built-in middleware, no need to install it
 
-//custom middleware
-
-
 //endpoints
 server.use('/api/projects', projectRouter);
-server.use('/api/projects/:id/actions', actionRouter);
+server.use('/api/actions', actionRouter);
 
 module.exports = server;

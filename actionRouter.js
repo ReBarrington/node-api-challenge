@@ -2,9 +2,9 @@ const express = require('express');
 const Actions = require('./data/helpers/actionModel');
 const router = express.Router();
 
-// GET /api/projects/:id/actions... Returns an array of all the action objects contained in the database:
+// // GET /api/actions - see all actions... 
 router.get('/', (req, res) => {
-  Actions.get(req.query)
+  Actions.get(req.params.id)
   .then((actions) => {
       res.status(200).json({ queryString: req.query, actions });
   })
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
   })
 })
 
-// GET /api/action/:id... Returns the post object with the specified id:
+// GET /api/actions/:id - see a action by id... 
 router.get('/:id', (req, res) => {
   Actions.get(req.params.id)
   .then((action) => {
@@ -30,7 +30,7 @@ router.get('/:id', (req, res) => {
   })
 })
 
-// DELETE /api/action/:id... Removes the action with the specified id and returns the deleted action object. You may need to make additional calls to the database in order to satisfy this requirement.
+// DELETE /api/actions/:id - delete a action
 router.delete('/:id', (req, res) => {
   let id = req.params.id;
   Actions.get(id)
@@ -57,7 +57,7 @@ router.delete('/:id', (req, res) => {
   })
 })
 
-// PUT /api/Actions/:id.... Updates the action with the specified id using data from the request body. Returns the modified document, NOT the original.
+// PUT /api/actions/:id - edit a action
 router.put('/:id', (req, res) => {
   let id = req.params.id;
   let changes = req.body;
@@ -91,4 +91,4 @@ router.put('/:id', (req, res) => {
   }
 })
 
-module.exports = router;
+module.exports = router
