@@ -99,6 +99,15 @@ router.post('/', (req, res) => {
     .catch(err => console.log(err))
   });
 
+  router.post('/:id/actions/:id', (req, res) => {
+    // delete action 
+    Actions.remove(req.params.id)
+    .then((action) => {
+      res.status(200).json("DELETING: ", action);
+    })
+    .catch(err => console.log(err))
+  });
+
 
 
 //custom middleware

@@ -1,7 +1,8 @@
 const express = require('express');
 
 //routers
-const router = require('./router.js');
+const projectRouter = require('./projectRouter.js');
+const actionRouter = require('./actionRouter.js');
 
 const server = express();
 
@@ -15,6 +16,7 @@ server.use(express.json()); // built-in middleware, no need to install it
 
 
 //endpoints
-server.use('/api/projects', router);
+server.use('/api/projects', projectRouter);
+server.use('/api/projects/:id/actions', actionRouter);
 
 module.exports = server;
